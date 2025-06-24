@@ -1,0 +1,94 @@
+/* עיצוב לדף הסיפורים */
+
+.intro-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.story-box {
+  max-width: 700px;
+  background-color: #f4f3fb;
+  border-right: 5px solid #9c9ed9;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.story-box h3 {
+  margin-top: 0;
+  color: #5a5aab;
+}
+
+.story-box p {
+  margin: 0.5rem 0 0;
+  color: #333;
+  line-height: 1.6;
+}
+.story-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f0effa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.story-form h2 {
+  margin-top: 0;
+  color: #5a5aab;
+}
+
+.story-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.story-form input,
+.story-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.story-form button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #6c7ec9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.story-form button:hover {
+  background-color: #5a5aab;
+}
+.edit-controls {
+  float: left;
+  margin: 0 0.5rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #f4f0f0;
+  font-size: 1rem;
+  cursor: pointer;
+}

@@ -11,8 +11,9 @@
     <div class="wrapper">
       <header>
         <div class="header-top">
-          <h1>סיפורים על ארנון</h1>
           <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <h1>סיפורים על ארנון</h1>
+          <button class="exit-edit-btn" onclick="exitEditMode()">EXIT</button>
         </div>
 
         <nav id="main-nav">
@@ -26,25 +27,47 @@
       </header>
 
       <main>
-        <section class="intro-wrapper">
-          <div class="intro-text">
-            <h2>זיכרונות משותפים</h2>
-            <p>
-              בעמוד זה נאספים סיפורים אישיים על ארנון – רגעים, מכתבים, שיחות, זיכרונות קטנים וגדולים שחרוטים בלב.
-            </p>
-          </div>
+        <section class="intro-text">
+          <h2>כאן משתפים זיכרונות</h2>
+          <p>
+            כאן נאספים הסיפורים על ארנון – מצחיקים, נוגעים, מפתיעים או
+            יומיומיים. כל סיפור מוסיף עוד אור למה שהוא השאיר בלב של כולנו.
+          </p>
+        </section>
+
+        <section class="story-form">
+          <h2>שתפו את הסיפור שלכם</h2>
+          <form id="storyForm">
+            <label for="name">השם שלך או הקשר שלך לארנון:</label>
+            <input type="text" id="name" required />
+
+            <label for="story">הסיפור שלך:</label>
+            <textarea id="story" rows="5" required></textarea>
+
+            <button type="submit">שליחה</button>
+          </form>
+        </section>
+
+        <section class="story-list" id="storyList">
+          <!-- סיפורים יופיעו כאן -->
         </section>
       </main>
 
       <footer>
-        <p><b>
-          "מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה פשוט
-          משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר- מקבל תוצאות" -</b> לזכרו של סרן
-          במיל' ארנון משה אברהם בנבניסטי
-        </p>
+        <div class="footer-content">
+          <p>
+            <b>
+              "מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה
+              פשוט משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר - מקבל תוצאות"
+            </b>
+            - לזכרו של סרן במיל' ארנון משה אברהם בנבניסטי
+          </p>
+        </div>
       </footer>
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="js/editMode.js"></script>
   </body>
 </html>
