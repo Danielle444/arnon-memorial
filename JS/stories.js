@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     controlWrapper.appendChild(deleteBtn);
 
     storyBox.appendChild(controlWrapper);
-    storyBox.appendChild(title);
     storyBox.appendChild(content);
+    storyBox.appendChild(title);
 
     storyList.appendChild(storyBox);
   }

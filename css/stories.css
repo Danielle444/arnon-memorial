@@ -28,7 +28,9 @@
 }
 
 .story-box h3 {
-  margin-top: 0;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
   color: #5a5aab;
 }
 
@@ -36,6 +38,7 @@
   margin: 0.5rem 0 0;
   color: #333;
   line-height: 1.6;
+  white-space: pre-line;
 }
 .story-form {
   max-width: 700px;
