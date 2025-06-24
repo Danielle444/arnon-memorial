@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>תמונות של ארנון</title>
+    <title>הגלריה של ארנון</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/gallery.css" />
   </head>
@@ -11,10 +11,8 @@
     <div class="wrapper">
       <header>
         <div class="header-top">
-          <h1>תמונות של ארנון</h1>
-          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+          <h1>הגלריה של ארנון</h1>
         </div>
-
         <nav id="main-nav">
           <ul>
             <li><a href="home.html">דף הבית</a></li>
@@ -26,26 +24,122 @@
       </header>
 
       <main>
-        <section class="intro-wrapper">
-          <div class="intro-text">
-            <h2>רגעים מצולמים</h2>
-            <p>
-              כאן יופיעו תמונות מחייו של ארנון – משפחה, חברים, צבא, חוויות שתרצו לזכור ולשתף.
-            </p>
+        <h2>אלבומי זיכרון</h2>
+        <div class="albums-container">
+          <div class="album-card">
+            <h3>פשוט ארנון</h3>
+            <div class="album-preview two-images">
+              <img src="images/arnon1.jpg" alt="ארנון" />
+              <img src="images/arnon2.jpg" alt="ארנון" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1qJyWWaWztkuvTjnMXIyPIEUSxlv3ofcx"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
           </div>
-        </section>
+
+          <div class="album-card">
+            <h3>ארנון וחברים</h3>
+            <div class="album-preview two-images">
+              <img src="images/friends1.jpg" alt="חברים" />
+              <img src="images/friends2.jpg" alt="חברים" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1uUHqHEPOGQvUP30D3YG_o_tSLcqmETAB"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+
+          <div class="album-card">
+            <h3>ארנון וכלבים</h3>
+            <div class="album-preview">
+              <img src="images/dogs1.jpg" alt="כלבים" />
+              <img src="images/dogs2.jpg" alt="כלבים" />
+              <img src="images/dogs3.jpg" alt="כלבים" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1Dca3fvSJ3mxfT7-8dRShBCZymfSJ1DM3"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+
+          <div class="album-card">
+            <h3>ארנון ומוזיקה</h3>
+            <div class="album-preview two-images">
+              <img src="images/music1.jpg" alt="מוזיקה" />
+              <img src="images/music2.jpg" alt="מוזיקה" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1xpXBLhfzwlbgLoo5XQj-JYIgfMak9-iB"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+
+          <div class="album-card">
+            <h3>ארנון ומשפחה</h3>
+            <div class="album-preview">
+              <img src="images/family1.jpg" alt="משפחה" />
+              <img src="images/family2.jpg" alt="משפחה" />
+              <img src="images/family3.jpg" alt="משפחה" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1tyVQwqVBKRNCnKE7HqQnIFJIYRD3sBfI"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+
+          <div class="album-card">
+            <h3>ארנון וסוסים</h3>
+            <div class="album-preview two-images">
+              <img src="images/horses1.jpg" alt="סוסים" />
+              <img src="images/horses2.jpg" alt="סוסים" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1p607ITt-6PwGeJbISCYakkjHUdWySt9S"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+
+          <div class="album-card">
+            <h3>ארנון בצבא</h3>
+            <div class="album-preview">
+              <img src="images/army1.jpg" alt="צבא" />
+              <img src="images/army2.jpg" alt="צבא" />
+              <img src="images/army3.jpg" alt="צבא" />
+            </div>
+            <a
+              href="https://drive.google.com/drive/folders/1JOQ6rH4E3wR4bJ1Eo0EX30LqFTGWqReG"
+              target="_blank"
+              class="view-btn"
+              >לצפייה</a
+            >
+          </div>
+        </div>
       </main>
 
-       <footer>
-        <p><b>
-          "מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה פשוט
-          משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר- מקבל תוצאות" -</b> לזכרו של סרן
-          במיל' ארנון משה אברהם בנבניסטי
-        </p>
+      <footer>
+        <div class="footer-content">
+          <p>
+            <b>
+              "מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה
+              פשוט משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר - מקבל תוצאות"
+            </b>
+            - לזכרו של סרן במיל' ארנון משה אברהם בנבניסטי
+          </p>
+        </div>
       </footer>
     </div>
-
-    <script src="js/script.js"></script>
-    <script src="js/editMode.js"></script>
   </body>
 </html>

@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // כפתור מחיקה – יוצג רק במצב עריכה
     var deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "❌";
+    deleteBtn.textContent = "✖";
     deleteBtn.className = "delete-btn";
     deleteBtn.addEventListener("click", function () {
       const confirmDelete = confirm("האם את בטוחה שברצונך למחוק את הסיפור?");

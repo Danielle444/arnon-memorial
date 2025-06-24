@@ -1,0 +1,107 @@
+main {
+  padding: 2rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+main h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4b4c88;
+}
+
+/* תצוגת גריד */
+.albums-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  box-sizing: border-box;
+}
+
+/* כרטיסיות */
+.album-card {
+  background: linear-gradient(180deg, #f2f4fd, #e6e9fa);
+  border: 1px solid #d6d9f5;
+  border-radius: 1.3rem;
+  box-shadow: 0 4px 10px rgba(76, 84, 134, 0.08);
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.album-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(76, 84, 134, 0.15);
+}
+
+.album-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 0.8rem;
+}
+
+/* אזור התמונות */
+.album-preview {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.album-preview img {
+  flex: 1;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.album-preview.two-images img {
+  flex: 1 1 48%;
+}
+
+.album-preview.one-image img {
+  flex: 1 1 100%;
+}
+
+/* כפתור */
+.view-btn {
+  background-color: #6c7ec9;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  transition: background-color 0.3s;
+  margin-top: auto;
+}
+
+.view-btn:hover {
+  background-color: #4b4c88;
+}
+
+/* מסכים קטנים */
+@media (max-width: 600px) {
+  .album-card {
+    max-width: 100%;
+  }
+
+  .album-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .album-preview img {
+    height: 110px;
+  }
+}
