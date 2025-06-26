@@ -11,8 +11,11 @@
     <div class="wrapper">
       <header>
         <div class="header-top">
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
           <h1>הגלריה של ארנון</h1>
+          <button class="exit-edit-btn" onclick="exitEditMode()">EXIT</button>
         </div>
+
         <nav id="main-nav">
           <ul>
             <li><a href="home.html">דף הבית</a></li>
@@ -36,7 +39,7 @@
               href="https://drive.google.com/drive/folders/1qJyWWaWztkuvTjnMXIyPIEUSxlv3ofcx"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
@@ -50,11 +53,11 @@
               href="https://drive.google.com/drive/folders/1uUHqHEPOGQvUP30D3YG_o_tSLcqmETAB"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
-          <div class="album-card">
+          <div class="album-card wide">
             <h3>ארנון וכלבים</h3>
             <div class="album-preview">
               <img src="images/dogs1.jpg" alt="כלבים" />
@@ -65,25 +68,26 @@
               href="https://drive.google.com/drive/folders/1Dca3fvSJ3mxfT7-8dRShBCZymfSJ1DM3"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
-          <div class="album-card">
+          <div class="album-card wide">
             <h3>ארנון ומוזיקה</h3>
-            <div class="album-preview two-images">
+            <div class="album-preview">
               <img src="images/music1.jpg" alt="מוזיקה" />
               <img src="images/music2.jpg" alt="מוזיקה" />
+              <img src="images/music3.jpg" alt="מוזיקה" />
             </div>
             <a
               href="https://drive.google.com/drive/folders/1xpXBLhfzwlbgLoo5XQj-JYIgfMak9-iB"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
-          <div class="album-card">
+          <div class="album-card wide">
             <h3>ארנון ומשפחה</h3>
             <div class="album-preview">
               <img src="images/family1.jpg" alt="משפחה" />
@@ -94,25 +98,26 @@
               href="https://drive.google.com/drive/folders/1tyVQwqVBKRNCnKE7HqQnIFJIYRD3sBfI"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
-          <div class="album-card">
+          <div class="album-card wide">
             <h3>ארנון וסוסים</h3>
-            <div class="album-preview two-images">
-              <img src="images/horses1.jpg" alt="סוסים" />
+            <div class="album-preview">
               <img src="images/horses2.jpg" alt="סוסים" />
+              <img src="images/horses1.jpg" alt="סוסים" />
+              <img src="images/horses3.jpg" alt="סוסים" />
             </div>
             <a
               href="https://drive.google.com/drive/folders/1p607ITt-6PwGeJbISCYakkjHUdWySt9S"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
 
-          <div class="album-card">
+          <div class="album-card wide">
             <h3>ארנון בצבא</h3>
             <div class="album-preview">
               <img src="images/army1.jpg" alt="צבא" />
@@ -123,7 +128,7 @@
               href="https://drive.google.com/drive/folders/1JOQ6rH4E3wR4bJ1Eo0EX30LqFTGWqReG"
               target="_blank"
               class="view-btn"
-              >לצפייה</a
+              >לצפייה והעלאת תמונות</a
             >
           </div>
         </div>
@@ -132,14 +137,17 @@
       <footer>
         <div class="footer-content">
           <p>
-            <b>
-              "מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה
-              פשוט משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר - מקבל תוצאות"
-            </b>
+            <b
+              >"מה שבא בקלות, גם הולך בקלות, כל דבר צריך התמדה, עבודה קשה וזה
+              פשוט משתלם בסוף. מי שמתמיד, עובד קשה לא מוותר - מקבל תוצאות"</b
+            >
             - לזכרו של סרן במיל' ארנון משה אברהם בנבניסטי
           </p>
         </div>
       </footer>
     </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/editMode.js"></script>
   </body>
 </html>

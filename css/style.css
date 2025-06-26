@@ -102,10 +102,9 @@ footer {
 
 .footer-content {
   max-width: 900px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-
 }
 
 .footer-content p {
@@ -154,7 +153,8 @@ footer {
     padding: 0.2rem 0.4rem;
   }
 
-    .menu-toggle{
+  .menu-toggle {
+    display: block;
     font-size: 1.6rem;
   }
 
