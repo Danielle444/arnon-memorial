@@ -1,0 +1,145 @@
+main {
+  padding: 2rem 1rem 3rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4b4c88;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.form-button:hover {
+  background-color: #6e70b5;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #4b4c88;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.initiative-card {
+  background-color: #f2f2f2;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem auto 3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.initiative-card video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.initiative-card p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.carousel {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  max-height: 200px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.carousel-item img,
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.running-map {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.running-map:hover {
+  transform: scale(1.02);
+}
+
+/* מניעת גלילה אופקית */
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .form-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .carousel {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: -1rem; /* מחזיר גלילה כשיש padding חוסם */
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .carousel-item {
+    flex: 0 0 85vw;
+    max-width: 85vw;
+    height: auto;
+    scroll-snap-align: start;
+  }
+
+  .carousel-item img,
+  .carousel-item video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+
