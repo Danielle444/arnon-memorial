@@ -58,8 +58,15 @@
             >
           </p>
 
-          <div class="carousel">
-            <div class="carousel-track">
+          <div class="carousel-wrapper">
+            <button class="carousel-btn left" onclick="scrollCarousel(-1)">
+              &#10095;
+            </button>
+            <button class="carousel-btn right" onclick="scrollCarousel(1)">
+              &#10094;
+            </button>
+
+            <div class="carousel-track" id="carouselTrack">
               <div class="carousel-item">
                 <video controls>
                   <source src="images/DK corner-1.mp4" type="video/mp4" />
