@@ -1,6 +1,7 @@
 main {
+  padding: 1rem 0.1rem;
   max-width: 1200px;
-  margin: 5rem;
+  margin: auto;
   box-sizing: border-box;
 }
 
@@ -51,7 +52,7 @@ main h2 {
 }
 
 .album-card h3::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
@@ -59,7 +60,6 @@ main h2 {
   margin: 0.4rem auto 0;
   border-radius: 2px;
 }
-
 
 /* אזור התמונות */
 .album-preview {
@@ -136,4 +136,3 @@ main h2 {
     height: auto;
   }
 }
-
