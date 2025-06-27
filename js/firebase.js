@@ -11,11 +11,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 import {
   getAuth,
-  signInAnonymously,
-  onAuthStateChanged
+  signInAnonymously
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
-// קונפיג פרויקט
 const firebaseConfig = {
   apiKey: "AIzaSyDvU6FD8BPqQ2VWPM-Z2JB2eNgJa1Cpc6U",
   authDomain: "arnon-memorial.firebaseapp.com",
@@ -30,19 +28,16 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
 
-// התחברות אנונימית ברגע שהאתר נטען
+// התחברות אנונימית
 signInAnonymously(auth).catch((error) => {
   console.error("שגיאה בהתחברות אנונימית:", error);
 });
 
-// פונקציות
-function writeStory(title, content, name) {
+function writeStory(title, content, name, callback) {
   const storiesRef = ref(db, "stories");
   const newStoryRef = push(storiesRef);
-  set(newStoryRef, {
-    title,
-    content,
-    name
+  set(newStoryRef, { title, content, name }).then(() => {
+    if (callback) callback();
   });
 }
 

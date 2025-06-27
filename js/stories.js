@@ -5,75 +5,82 @@ const storyList = document.getElementById("storyList");
 const storyFormSection = document.getElementById("storyFormSection");
 const toggleFormBtn = document.querySelector(".toggle-form-btn");
 
-// פתיחת טופס כתיבת סיפור
+function isEditMode() {
+  return sessionStorage.getItem("editMode") === "true";
+}
+
 toggleFormBtn.addEventListener("click", function () {
   storyFormSection.style.display = "block";
 });
 
-// שליחת טופס
 storyForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const title = document.getElementById("title").value;
   const story = document.getElementById("story").value;
   const name = document.getElementById("name").value;
 
-  writeStory(title, story, name);
+  writeStory(title, story, name, () => {
+    readStories(renderStories); // רק אחרי שנשמר
+  });
+
   storyForm.reset();
   storyFormSection.style.display = "none";
 });
 
-// קריאת סיפורים מה-DB והצגתם
-readStories((stories) => {
+// הצגה ראשונית
+readStories(renderStories);
+
+function renderStories(stories) {
   storyList.innerHTML = "";
-
-  const storyEntries = Object.entries(stories).reverse(); // חדש קודם
-
-  for (let [id, storyData] of storyEntries) {
-    const { title, content, name } = storyData;
-
-    const card = document.createElement("div");
-    card.className = "story-box";
-
-    const titleElem = document.createElement("h4");
-    titleElem.textContent = title || "סיפור ללא כותרת";
-
-    const contentElem = document.createElement("p");
-    contentElem.textContent = content;
-
-    const nameElem = document.createElement("h3");
-    nameElem.textContent = `נכתב על ידי: ${name}`;
-
-    card.appendChild(titleElem);
-    card.appendChild(contentElem);
-    card.appendChild(nameElem);
-
-    // אם במצב עריכה – הוספת כפתורים
-    if (isEditMode()) {
-      const deleteBtn = document.createElement("button");
-      deleteBtn.className = "delete-btn";
-      deleteBtn.textContent = "🗑️";
-      deleteBtn.onclick = () => {
-        if (confirm("האם למחוק את הסיפור?")) {
-          deleteStory(id);
-        }
-      };
-
-      const editBtn = document.createElement("button");
-      editBtn.className = "edit-btn";
-      editBtn.textContent = "✎";
-      editBtn.onclick = () => {
-        openEditForm(card, id, title, content, name);
-      };
-
-      card.appendChild(deleteBtn);
-      card.appendChild(editBtn);
-    }
-
+  const ids = Object.keys(stories).reverse(); // כדי שהחדש יופיע ראשון
+  for (let id of ids) {
+    const { title, content, name } = stories[id];
+    const card = createStoryCard(id, title, content, name);
     storyList.appendChild(card);
   }
-});
+}
 
-// טופס עריכה בתוך כרטיס
+function createStoryCard(id, title, content, name) {
+  const card = document.createElement("div");
+  card.className = "story-box";
+
+  const titleElem = document.createElement("h4");
+  titleElem.textContent = title || "סיפור ללא כותרת";
+
+  const contentElem = document.createElement("p");
+  contentElem.textContent = content;
+
+  const nameElem = document.createElement("h3");
+  nameElem.textContent = `נכתב על ידי: ${name}`;
+
+  card.appendChild(titleElem);
+  card.appendChild(contentElem);
+  card.appendChild(nameElem);
+
+  if (isEditMode()) {
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    deleteBtn.textContent = "🗑️";
+    deleteBtn.onclick = () => {
+      if (confirm("האם למחוק את הסיפור?")) {
+        deleteStory(id);
+      }
+    };
+
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit-btn";
+    editBtn.textContent = "✏️";
+    editBtn.onclick = () => {
+      openEditForm(card, id, title, content, name);
+    };
+
+    card.appendChild(deleteBtn);
+    card.appendChild(editBtn);
+  }
+
+  return card;
+}
+
 function openEditForm(card, id, oldTitle, oldContent, oldName) {
   card.innerHTML = "";
 
@@ -101,13 +108,12 @@ function openEditForm(card, id, oldTitle, oldContent, oldName) {
       content: contentTextarea.value,
       name: nameInput.value
     });
-    location.reload();
   };
 
   const cancelBtn = document.createElement("button");
   cancelBtn.textContent = "ביטול";
   cancelBtn.onclick = () => {
-    location.reload();
+    readStories(renderStories);
   };
 
   buttonWrapper.appendChild(saveBtn);
