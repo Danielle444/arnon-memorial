@@ -1,4 +1,10 @@
 /* עיצוב לדף הסיפורים */
+main {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 .intro-text {
   max-width: 800px;
@@ -24,7 +30,10 @@
   margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-top: 2.5rem; /* מרווח לאיקס */
+  padding-bottom: 2.5rem; /* מרווח לעיפרון */
 }
 
 .story-box h3 {
@@ -34,19 +43,34 @@
   color: #5a5aab;
 }
 
+.story-box h4 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #4b4c88;
+}
+
 .story-box p {
   margin: 0.5rem 0 0;
   color: #333;
   line-height: 1.6;
   white-space: pre-line;
 }
+
+.story-form-wrapper {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
 .story-form {
   max-width: 700px;
   margin: 2rem auto;
   padding: 1.5rem;
   background-color: #f0effa;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .story-form h2 {
@@ -83,15 +107,103 @@
 .story-form button:hover {
   background-color: #5a5aab;
 }
-.edit-controls {
-  float: left;
-  margin: 0 0.5rem;
-}
 
-.delete-btn {
-  background: none;
+/* כפתור פתיחת טופס */
+.toggle-form-btn {
+  display: block;
+  margin: 2rem auto 1rem;
+  background-color: #6c7ec9;
+  color: white;
   border: none;
-  color: #7445e1;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.toggle-form-btn:hover {
+  background-color: #5a5aab;
+}
+
+/* כפתור מחיקה - שמאל עליון */
+.delete-btn {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  color: #c0392b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.delete-btn:hover {
+  color: #e74c3c;
+}
+
+/* כפתור עריכה - עומד, שמאל תחתון */
+.edit-btn {
+  writing-mode: vertical-rl;
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  background: none;
+  border: none;
+  color: #4b4c88;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  color: #2c2e74;
+}
+
+/* טופס עריכה בתוך כרטיסייה */
+.inner-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.inner-edit-form input,
+.inner-edit-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+/* כפתורי ביטול ושמירה */
+.inner-edit-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.inner-edit-form button {
+  background-color: #6c7ec9;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.inner-edit-form button:hover {
+  background-color: #5a5aab;
+}
+.story-box h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #4b4c88;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #9c9ed9;
+  padding-bottom: 0.2rem;
 }

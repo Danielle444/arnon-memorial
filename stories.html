@@ -35,17 +35,29 @@
           </p>
         </section>
 
-        <section class="story-form">
-          <h2>שתפו את הסיפור שלכם</h2>
-          <form id="storyForm">
-            <label for="name">השם שלך או הקשר שלך לארנון:</label>
-            <input type="text" id="name" required />
+        <section class="story-form-wrapper">
+          <button class="toggle-form-btn" onclick="toggleStoryForm()">
+            + שתפו את הסיפור שלכם
+          </button>
 
-            <label for="story">הסיפור שלך:</label>
-            <textarea id="story" rows="5" required></textarea>
+          <section
+            class="story-form"
+            id="storyFormSection"
+            style="display: none"
+          >
+            <form id="storyForm">
+              <label for="title">כותרת (לא חובה):</label>
+              <input type="text" id="title" />
 
-            <button type="submit">שליחה</button>
-          </form>
+              <label for="story">הסיפור שלך:</label>
+              <textarea id="story" rows="5" required></textarea>
+
+              <label for="name">השם שלך או הקשר שלך לארנון:</label>
+              <input type="text" id="name" autocomplete="name" required />
+
+              <button type="submit">שליחה</button>
+            </form>
+          </section>
         </section>
 
         <section class="story-list" id="storyList">
