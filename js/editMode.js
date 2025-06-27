@@ -75,3 +75,5 @@ document.addEventListener("DOMContentLoaded", function () {
     enableEditMode();
   }
 });
+window.isEditMode = isEditMode;
+
