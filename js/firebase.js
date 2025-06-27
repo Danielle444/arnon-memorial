@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
-// פונקציה להוספת סיפור למסד הנתונים
+// הוספת סיפור חדש
 export function writeStory(title, content, name) {
   const storiesRef = ref(database, 'stories');
   const newStoryRef = push(storiesRef);
@@ -31,7 +31,7 @@ export function writeStory(title, content, name) {
   });
 }
 
-// פונקציה לשליפת כל הסיפורים
+// שליפת סיפורים
 export function readStories(callback) {
   const storiesRef = ref(database, 'stories');
   onValue(storiesRef, (snapshot) => {
@@ -39,14 +39,15 @@ export function readStories(callback) {
     callback(data);
   });
 }
-// מחיקת סיפור
-export function deleteStory(id) {
+
+// מחיקת סיפור לפי ID
+export function deleteStoryFromDB(id) {
   const storyRef = ref(database, `stories/${id}`);
-  set(storyRef, null); // מחיקה = קביעה לערך null
+  set(storyRef, null);
 }
 
-// עדכון סיפור
-export function updateStory(id, updatedData) {
+// עדכון סיפור לפי ID
+export function updateStoryInDB(id, updatedData) {
   const storyRef = ref(database, `stories/${id}`);
   set(storyRef, updatedData);
 }
