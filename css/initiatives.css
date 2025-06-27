@@ -38,6 +38,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
+
 .initiative-card {
   background-color: #f2f2f2;
   border-radius: 1rem;
@@ -52,6 +53,25 @@ h2 {
   height: auto;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.initiative-card h3 {
+  font-size: 2rem;
+  color: #4b4c88;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.initiative-card h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #9370db;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .initiative-card p {
