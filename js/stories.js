@@ -53,7 +53,12 @@ function createStoryCard(id, title, content, name) {
   titleElem.textContent = title || "סיפור ללא כותרת";
 
   const contentElem = document.createElement("p");
+if (content.includes("<audio")) {
   contentElem.innerHTML = content;
+} else {
+  contentElem.textContent = content;
+}
+
 
   const nameElem = document.createElement("h3");
   nameElem.textContent = `נכתב על ידי: ${name}`;
