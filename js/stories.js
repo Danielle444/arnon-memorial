@@ -1,4 +1,9 @@
-import { writeStory, readStories, deleteStory, updateStory } from "./firebase.js";
+import {
+  writeStory,
+  readStories,
+  deleteStory,
+  updateStory,
+} from "./firebase.js";
 
 const storyForm = document.getElementById("storyForm");
 const storyList = document.getElementById("storyList");
@@ -59,7 +64,7 @@ function createStoryCard(id, title, content, name) {
 
   if (isEditMode()) {
     const deleteBtn = document.createElement("button");
-    deleteBtn.className = "delete-btn";
+    deleteBtn.className = "delete-btn edit-controls";
     deleteBtn.textContent = "🗑️";
     deleteBtn.onclick = () => {
       if (confirm("האם למחוק את הסיפור?")) {
@@ -68,7 +73,7 @@ function createStoryCard(id, title, content, name) {
     };
 
     const editBtn = document.createElement("button");
-    editBtn.className = "edit-btn";
+    editBtn.className = "edit-btn edit-controls";
     editBtn.textContent = "✏️";
     editBtn.onclick = () => {
       openEditForm(card, id, title, content, name);
@@ -106,7 +111,7 @@ function openEditForm(card, id, oldTitle, oldContent, oldName) {
     updateStory(id, {
       title: titleInput.value,
       content: contentTextarea.value,
-      name: nameInput.value
+      name: nameInput.value,
     });
   };
 
